@@ -142,7 +142,85 @@ const observer = new IntersectionObserver((entries) => {
     });
 }, observerOptions);
 
-document.querySelectorAll('.program-card, .mv-card, .team-member, .value-item').forEach(el => {
+document.querySelectorAll('.program-card, .mv-card, .team-member, .value-item, .value-card').forEach(el => {
     observer.observe(el);
 });
+
+// Mission & vision cards - group behavior (click one, open/close both)
+const mvCards = document.querySelectorAll('.mission-vision-cards .interactive-card');
+mvCards.forEach(card => {
+    card.addEventListener('click', () => {
+        const anyActive = Array.from(mvCards).some(c => c.classList.contains('active'));
+        if (anyActive) {
+            mvCards.forEach(c => c.classList.remove('active'));
+        } else {
+            mvCards.forEach(c => c.classList.add('active'));
+        }
+    });
+});
+
+// Core values - group behavior (click one, open/close all together)
+const valueCards = document.querySelectorAll('.value-card');
+valueCards.forEach(card => {
+    card.addEventListener('click', () => {
+        const anyActive = Array.from(valueCards).some(c => c.classList.contains('active'));
+        if (anyActive) {
+            valueCards.forEach(c => c.classList.remove('active'));
+        } else {
+            valueCards.forEach(c => c.classList.add('active'));
+        }
+    });
+});
+
+// Impact counters
+const counters = document.querySelectorAll('.counter');
+const duration = 2000; // total animation duration in ms
+const restartDelay = 2000; // delay between loops in ms
+let countersLoopStarted = false;
+
+function startCountersLoop() {
+    if (countersLoopStarted) return;
+    countersLoopStarted = true;
+
+    const runOnce = () => {
+        counters.forEach(counter => {
+            const target = +counter.getAttribute('data-target');
+            const startTime = performance.now();
+            counter.innerText = '0';
+
+            const updateCount = (currentTime) => {
+                const elapsed = currentTime - startTime;
+                const progress = Math.min(elapsed / duration, 1);
+                const value = Math.floor(progress * target);
+
+                counter.innerText = value;
+
+                if (progress < 1) {
+                    requestAnimationFrame(updateCount);
+                } else {
+                    counter.innerText = target;
+                }
+            };
+
+            requestAnimationFrame(updateCount);
+        });
+
+        setTimeout(runOnce, duration + restartDelay);
+    };
+
+    runOnce();
+}
+
+if (counters.length) {
+    const counterObserver = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                startCountersLoop();
+                counterObserver.disconnect();
+            }
+        });
+    }, { threshold: 0.3 });
+
+    counters.forEach(counter => counterObserver.observe(counter));
+}
 

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us - Hope for Tomorrow</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -34,10 +35,10 @@
     </nav>
 
     <!-- Page Header -->
-    <section class="page-header">
+    <section class="page-header page-header--with-image page-header--about">
+        <div class="page-header-overlay"></div>
         <div class="container">
-            <h1>About Us</h1>
-            <p>Empowering rural youth through education, health, and opportunity</p>
+            <h1 class="page-title-line">About Us</h1>
         </div>
     </section>
 
@@ -45,36 +46,104 @@
     <section class="page-content">
         <div class="container">
             <div class="content-section">
-                <p>Hope for Tomorrow, founded in 2024 by a committed group of passionate youth, is a non-governmental community-based organization with a mission to empower rural youth. Our work is driven by a deep commitment to improving sexual and reproductive health (SRH) and advancing the well-being of underserved communities. Through collective efforts, we provide comprehensive education, resources, and support in areas such as SRH and girls' education, emphasizing creating a brighter future for vulnerable youth.</p>
+                <h2 class="title-with-line">Who We Are</h2>
+                <p>Hope for Tomorrow, founded in 2024 by committed young leaders, is a non-governmental community-based organization focused on empowering rural youth. We work to improve sexual and reproductive health (SRH), advance girls' education, and strengthen the well-being of underserved communities with practical resources and support.</p>
+                <p>Hope for Tomorrow is a youth- and women-led non-governmental organization working to advance sexual and reproductive health and rights, and educational opportunities for girls and young women in Rwanda.</p>
+                <p>We were founded in response to the persistent barriers that prevent girls, particularly those in marginalized communities, from accessing accurate health information, managing their menstruation with dignity, and continuing their education. Our work is grounded in the belief that health, education, and dignity are deeply interconnected and essential to achieving gender equity.</p>
+                <p>Through community-based programming, partnerships, and evidence-informed approaches, we support girls and young women to navigate adolescence with agency, confidence, and opportunity, which allows them to reach their full potential.</p>
             </div>
 
-            <div class="content-section">
-                <h2>Our Story</h2>
-                <p>Belyse Mukayiranga and a dedicated group of colleagues founded Hope for Tomorrow in 2024 to uplift and empower rural youth. The organization's journey began in the rural areas of Rwanda, where the founders witnessed the significant challenges young people face, particularly in health, education, and socioeconomic opportunities. These experiences shaped their vision to create meaningful change within their communities by addressing critical needs and providing support.</p>
-                <p>Hope for Tomorrow was established to tackle issues such as limited access to sexual and reproductive health education, barriers to girls' education, and the lack of opportunities for rural youth to develop their full potential. The founders recognized that by addressing these fundamental challenges, they could help transform lives and create lasting positive change.</p>
-            </div>
-
-            <div class="content-section">
-                <h2>Our Mission</h2>
-                <p>At Hope for Tomorrow, our mission is clear: to support and empower rural youth through sexual and reproductive health, capacity building, and girls' education. We believe that by addressing these fundamental aspects, we can significantly improve young people's health and socioeconomic well-being in rural areas. Our programs are designed to provide comprehensive sexual and reproductive health education, build skills and capacities, and promote girls' education, ensuring that they have the tools and knowledge needed to lead healthy and prosperous lives.</p>
-            </div>
-
-            <div class="content-section">
-                <h2>Our Vision</h2>
-                <p>Our vision is to build a society where rural youth can achieve their full potential in health, education, and socioeconomic well-being. We strive to create an environment where young people have the resources and opportunities necessary to overcome challenges and thrive. By focusing on holistic development, we aim to foster a generation of empowered individuals who can contribute positively to their communities and beyond.</p>
-            </div>
-
-            <div class="content-container">
-                <!-- Left side - Image -->
-                <div class="image-container">
-                    <img src="assets/our-journey.png" alt="Our Journey">
+            <div class="content-section story-section">
+                <div class="story-grid">
+                    <div class="story-text">
+                        <h2 class="title-with-line">Our Story</h2>
+                        <p>Belyse Mukayiranga and her colleagues launched Hope for Tomorrow after witnessing the barriers rural youth face in health, education, and opportunity. Their shared experiences in Rwanda inspired a vision to close these gaps with reliable SRH education, access to schooling, and supportive spaces where young people can thrive.</p>
+                        <p>What began as a small effort has grown into a community movement powered by collaboration, resilience, and the belief that every young person deserves the chance to reach their full potential.</p>
+                    </div>
+                    <div class="story-photos">
+                        <div class="photo-card">
+                            <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=600&h=600&fit=crop" alt="Belyse Mukayiranga">
+                            <div class="photo-caption">Belyse Mukayiranga</div>
+                        </div>
+                        <div class="photo-card">
+                            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=600&h=600&fit=crop" alt="Hope for Tomorrow colleagues">
+                            <div class="photo-caption">Founding colleagues</div>
+                        </div>
+                    </div>
                 </div>
-                
-                <!-- Right side - Text content -->
+            </div>
+
+            <div class="content-section mission-vision-cards">
+                <div class="mv-card interactive-card" data-toggle="collapse">
+                    <div class="mv-card-header">
+                        <h3>Our Mission</h3>
+                        <span class="mv-card-icon">+</span>
+                    </div>
+                    <div class="mv-card-body">
+                        <p>We empower rural youth through sexual and reproductive health education, capacity building, and girls' education. By equipping young people with accurate knowledge, skills, and support, we help them lead healthy and prosperous lives.</p>
+                    </div>
+                </div>
+                <div class="mv-card interactive-card" data-toggle="collapse">
+                    <div class="mv-card-header">
+                        <h3>Our Vision</h3>
+                        <span class="mv-card-icon">+</span>
+                    </div>
+                    <div class="mv-card-body">
+                        <p>We envision communities where rural youth have the resources and opportunities to realize their full potential. By fostering holistic development, we aim to nurture empowered individuals who contribute positively to their futures and their communities.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-container journey-section">
                 <div class="text-container">
-                    <h2>Our Journey Forward</h2>
-                    <p>Hope for Tomorrow remains committed to its mission and vision as we continue our journey. We understand that the road ahead may be filled with challenges, but we are driven by the stories of resilience and hope that inspired our founding. Our programs continuously evolve to meet the communities' needs, and we are dedicated to creating sustainable change.</p>
-                    <p>Hope for Tomorrow is more than an organization; it is a movement toward a brighter future for rural youth. With the support of our partners, volunteers, and the communities we serve, we are confident that we can achieve our goals and make a lasting impact. Together, we hope for tomorrow, where every young person can reach their full potential and lead a healthy, educated, and prosperous life.</p>
+                    <h2 class="title-with-line">Our Journey Forward</h2>
+                    <p>We evolve our programs to stay responsive to the young people we serve, pairing evidence-based SRH education with mentorship and skills building.</p>
+                    <p>With partners, volunteers, and community leaders, we are building a sustainable path so every young person can learn, lead, and prosper.</p>
+                </div>
+                <div class="image-container">
+                    <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=800&h=600&fit=crop" alt="Hope for Tomorrow community">
+                </div>
+            </div>
+            
+            <div class="content-section values-section">
+                <h2 class="title-with-line">Our Core Values</h2>
+                <div class="values-grid">
+                    <div class="mv-card interactive-card value-card">
+                        <div class="mv-card-header">
+                            <h3><i class="fa fa-heart value-icon" aria-hidden="true"></i>Dignity</h3>
+                            <span class="mv-card-icon">+</span>
+                        </div>
+                        <div class="mv-card-body">
+                            <p>We uphold the inherent dignity of every girl and young woman, ensuring our work protects and affirms their rights and worth.</p>
+                        </div>
+                    </div>
+                    <div class="mv-card interactive-card value-card">
+                        <div class="mv-card-header">
+                            <h3><i class="fa fa-balance-scale value-icon" aria-hidden="true"></i>Equity</h3>
+                            <span class="mv-card-icon">+</span>
+                        </div>
+                        <div class="mv-card-body">
+                            <p>We focus on those most marginalized, addressing structural barriers so that opportunities and resources are fairly shared.</p>
+                        </div>
+                    </div>
+                    <div class="mv-card interactive-card value-card">
+                        <div class="mv-card-header">
+                            <h3><i class="fa fa-check-circle value-icon" aria-hidden="true"></i>Integrity</h3>
+                            <span class="mv-card-icon">+</span>
+                        </div>
+                        <div class="mv-card-body">
+                            <p>We act with honesty, accountability, and transparency in how we partner with communities and manage our work.</p>
+                        </div>
+                    </div>
+                    <div class="mv-card interactive-card value-card">
+                        <div class="mv-card-header">
+                            <h3><i class="fa fa-users value-icon" aria-hidden="true"></i>Inclusion</h3>
+                            <span class="mv-card-icon">+</span>
+                        </div>
+                        <div class="mv-card-body">
+                            <p>We create spaces where diverse girls and young women, including those with disabilities, are heard, respected, and able to participate.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
             <!-- <div class="content-section">
