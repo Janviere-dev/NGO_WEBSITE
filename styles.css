@@ -1250,23 +1250,23 @@ body {
 }
 
 .page-header--about {
-    background-image: url('https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=1600&h=900&fit=crop');
+    background-image: url('assets/About-Us.jpeg');
 }
 
 .page-header--programs {
-    background-image: url('https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=1600&h=900&fit=crop');
+    background-image: url('assets/coworker.jpg');
 }
 
 .page-header--team {
-    background-image: url('https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=1600&h=900&fit=crop');
+    background-image: url('assets/coworker.jpg');
 }
 
 .page-header--impact {
-    background-image: url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=1600&h=900&fit=crop');
+    background-image: url('assets/community-impact.jpg');
 }
 
 .page-header--donate {
-    background-image: url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=1600&h=900&fit=crop');
+    background-image: url('assets/donate.jpg');
 }
 
 .page-header-overlay {
