@@ -252,3 +252,72 @@ if (counters.length) {
     counters.forEach(counter => counterObserver.observe(counter));
 }
 
+// Contact form submission handler
+const contactForm = document.getElementById('contactForm');
+if (contactForm) {
+    contactForm.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        
+        const submitButton = contactForm.querySelector('button[type="submit"]');
+        const formStatus = document.getElementById('form-status');
+        const originalButtonText = submitButton.textContent;
+        
+        // Disable button and show loading state
+        submitButton.disabled = true;
+        submitButton.textContent = 'Sending...';
+        formStatus.textContent = '';
+        formStatus.style.display = 'none';
+        
+        try {
+            const formData = new FormData(contactForm);
+            
+            // Convert FormData to JSON for Web3Forms
+            const object = {};
+            formData.forEach((value, key) => {
+                object[key] = value;
+            });
+            const json = JSON.stringify(object);
+            
+            const response = await fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: json
+            });
+            
+            const result = await response.json();
+            
+            if (result.success) {
+                // Show success message
+                formStatus.style.display = 'block';
+                formStatus.style.color = '#28a745';
+                formStatus.textContent = 'Thank you for helping girls and young women reach their full potential!';
+                
+                // Reset form
+                contactForm.reset();
+                
+                // Hide message after 8 seconds
+                setTimeout(() => {
+                    formStatus.style.display = 'none';
+                }, 8000);
+            } else {
+                throw new Error('Form submission failed');
+            }
+        } catch (error) {
+            // Show error message
+            formStatus.style.display = 'block';
+            formStatus.style.color = '#dc3545';
+            formStatus.textContent = 'Oops! There was a problem submitting your form. Please try again or email us directly at info@hopefortomorrow.org.rw';
+        } finally {
+            // Re-enable button
+            submitButton.disabled = false;
+            submitButton.textContent = originalButtonText;
+        }
+    });
+}
+
+
+
+
