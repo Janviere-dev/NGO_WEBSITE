@@ -716,7 +716,7 @@ body {
 
 .photo-card img {
     width: 100%;
-    height: 220px;
+    height: 400px;
     object-fit: cover;
 }
 
@@ -847,7 +847,7 @@ body {
 /* Programs Preview */
 .programs-preview {
     padding: 80px 0;
-    background: var(--bg-light);
+    background: white;
 }
 
 .section-title {
@@ -943,6 +943,31 @@ body {
     transition: transform 0.5s ease;
 }
 
+/* Programs page detail sections */
+.content-section#menstrual-health .programs-grid,
+.content-section#girls-education .programs-grid,
+.content-section#aysrh .programs-grid {
+    margin-bottom: 2rem;
+}
+
+.content-section#menstrual-health .program-image,
+.content-section#girls-education .program-image,
+.content-section#aysrh .program-image {
+    width: 100%;
+    height: 350px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+.content-section#menstrual-health .program-image img,
+.content-section#girls-education .program-image img,
+.content-section#aysrh .program-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
 .program-card:hover .program-image img {
     transform: scale(1.1);
 }
@@ -969,6 +994,7 @@ body {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 1.5rem;
+    margin-top: 2rem;
 }
 
 .program-info-card {
@@ -976,6 +1002,13 @@ body {
     border-radius: 12px;
     padding: 2rem 1.75rem;
     box-shadow: 0 8px 18px rgba(0, 0, 0, 0.06);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.program-info-card ul {
+    flex: 1;
 }
 
 .program-info-card h3 {
@@ -986,9 +1019,11 @@ body {
 }
 
 .program-info-card ul {
+    flex: 1;
     list-style: disc;
     padding-left: 1.25rem;
     color: var(--text-light);
+    margin: 0;
 }
 
 .program-info-card li + li {
@@ -1094,6 +1129,20 @@ body {
 .impact-preview {
     padding: 80px 0;
     background: var(--bg-light);
+}
+
+.impact-preview .section-title {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.impact-preview .section-title::before {
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.impact-preview .impact-stats {
+    margin-bottom: 4rem;
 }
 
 .impact-content {
@@ -2001,6 +2050,21 @@ body {
     .content-section[id^="menstrual-health"] .program-image,
     .content-section[id^="aysrh"] .program-image {
         order: -1;
+        height: 250px !important;
+        width: 100%;
+    }
+
+    .content-section#menstrual-health .program-image img,
+    .content-section#girls-education .program-image img,
+    .content-section#aysrh .program-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .program-info-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1rem !important;
     }
 
     /* Team */
@@ -2027,6 +2091,17 @@ body {
         padding: 60px 0;
     }
 
+    .impact-preview .section-title {
+        font-size: 2rem;
+        text-align: center;
+    }
+
+    .impact-preview .section-title::before {
+        width: 150px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
     .impact-content {
         grid-template-columns: 1fr;
         gap: 2rem;
@@ -2043,6 +2118,11 @@ body {
     .impact-text h2::before {
         width: 200px;
         left: 0;
+    }
+
+    .impact-stats {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
     }
 
     .impact-stats {
