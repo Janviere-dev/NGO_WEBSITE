@@ -10,6 +10,8 @@
     --dark-teal: #043142;
     --medium-teal: #0b4657;
     --light-teal: #125d6f;
+    --primary-teal: #2c84e9;
+    --primary-pink: #e91e63;
     --bg-light: #f5f5f5;
     --bg-very-light: #eef0f0;
     --white: #ffffff;
@@ -1330,6 +1332,10 @@ body {
     background-image: url('assets/donate.jpg');
 }
 
+.page-header--contact {
+    background-image: url('assets/community-impact.jpg');
+}
+
 .page-header-overlay {
     position: absolute;
     inset: 0;
@@ -2349,4 +2355,423 @@ body {
     }
 }
 
+/* Contact Page Styles */
+.contact-wrapper {
+    display: grid;
+    grid-template-columns: 380px 1fr;
+    gap: 2.5rem;
+    margin-top: 0;
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+}
 
+.contact-info-section {
+    background: linear-gradient(135deg, var(--dark-teal) 0%, var(--medium-teal) 100%);
+    color: white;
+    padding: 2rem 1.75rem;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    box-shadow: 0 10px 30px rgba(4, 49, 66, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.contact-info-section::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(44, 132, 233, 0.1) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.contact-info-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    padding: 1rem 1.25rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+    z-index: 1;
+}
+
+.contact-info-card:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateX(5px);
+    border-color: rgba(44, 132, 233, 0.3);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.contact-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--primary-blue) 0%, #1e6bc4 100%);
+    color: white;
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+    box-shadow: 0 4px 15px rgba(44, 132, 233, 0.3);
+    transition: all 0.3s ease;
+}
+
+.contact-info-card:hover .contact-icon {
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 0 6px 20px rgba(44, 132, 233, 0.5);
+}
+
+.contact-info-card h3 {
+    color: white;
+    font-size: 1.05rem;
+    margin: 0;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+}
+
+.contact-info-card p {
+    color: rgba(255, 255, 255, 0.95);
+    margin: 0;
+    line-height: 1.6;
+    font-size: 0.9rem;
+}
+
+.contact-social-section {
+    margin-top: 1rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    position: relative;
+    z-index: 1;
+}
+
+.contact-social-section h3 {
+    color: white;
+    font-size: 1.05rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+}
+
+.contact-social-links {
+    display: flex;
+    gap: 0.85rem;
+    flex-wrap: wrap;
+}
+
+.contact-social-links a {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    font-size: 1.4rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    position: relative;
+}
+
+.contact-social-links a::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--primary-blue) 0%, #1e6bc4 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.contact-social-links a:hover::before {
+    opacity: 1;
+}
+
+.contact-social-links a i {
+    position: relative;
+    z-index: 1;
+}
+
+.contact-social-links a:hover {
+    transform: translateY(-5px) scale(1.1);
+    box-shadow: 0 8px 20px rgba(44, 132, 233, 0.4);
+    border-color: var(--primary-blue);
+}
+
+.contact-form-section {
+    background: white;
+    padding: 2rem 2.5rem;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    border: 1px solid var(--border-color);
+}
+
+.contact-form-section .contact-form {
+    margin-top: 0;
+}
+
+.contact-form-section .form-group {
+    margin-bottom: 0.75rem;
+}
+
+.contact-form-section .form-group label {
+    font-size: 0.95rem;
+    margin-bottom: 0.35rem;
+}
+
+.contact-form-section .form-group input,
+.contact-form-section .form-group textarea {
+    padding: 0.7rem 1rem;
+    font-size: 0.95rem;
+}
+
+.contact-form-section .form-row {
+    margin-bottom: 0.75rem;
+}
+
+.btn-submit {
+    width: 100%;
+    padding: 0.9rem 2rem;
+    background: linear-gradient(135deg, var(--primary-blue) 0%, #1e6bc4 100%);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.05rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(44, 132, 233, 0.3);
+    margin-top: 0.5rem;
+}
+
+.btn-submit:hover {
+    background: linear-gradient(135deg, #1e6bc4 0%, var(--dark-teal) 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(44, 132, 233, 0.4);
+}
+
+@media (max-width: 992px) {
+    .contact-wrapper {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .contact-info-section {
+        padding: 2rem 1.5rem;
+    }
+
+    .contact-form-section {
+        padding: 2rem 1.5rem;
+    }
+}
+
+/* Donation Options Cards */
+.donation-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2.5rem;
+    margin: 0 auto 4rem auto;
+    max-width: 1200px;
+}
+
+.donation-card {
+    background: white;
+    padding: 3rem 2rem;
+    border-radius: 16px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    position: relative;
+    overflow: hidden;
+}
+
+.donation-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-blue) 0%, var(--dark-teal) 100%);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.donation-card:hover::before {
+    transform: scaleX(1);
+}
+
+.donation-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(44, 132, 233, 0.2);
+    border-color: var(--primary-blue);
+}
+
+.donation-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--primary-blue) 0%, #1e6bc4 100%);
+    color: white;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 8px 20px rgba(44, 132, 233, 0.3);
+    transition: all 0.3s ease;
+}
+
+.donation-card:hover .donation-icon {
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 0 10px 25px rgba(44, 132, 233, 0.5);
+}
+
+.donation-card h3 {
+    color: var(--dark-teal);
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    letter-spacing: 0.5px;
+}
+
+.donation-card p {
+    color: var(--text-light);
+    margin-bottom: 2rem;
+    line-height: 1.7;
+    font-size: 1rem;
+}
+
+.btn-donation {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background: linear-gradient(135deg, var(--primary-blue) 0%, #1e6bc4 100%);
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(44, 132, 233, 0.3);
+}
+
+.btn-donation:hover {
+    background: linear-gradient(135deg, #1e6bc4 0%, var(--dark-teal) 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(44, 132, 233, 0.4);
+}
+
+@media (max-width: 768px) {
+    .donation-options {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .donation-card {
+        padding: 2.5rem 1.5rem;
+    }
+}
+
+/* Donation Form Styles */
+.donate-hero {
+    animation: fadeInUp 0.8s ease;
+}
+
+.donate-side-by-side {
+    animation: fadeInUp 0.8s ease;
+}
+
+@media (max-width: 992px) {
+    .donate-side-by-side {
+        grid-template-columns: 1fr !important;
+        gap: 2rem !important;
+    }
+    
+    .donate-image-section {
+        order: 1;
+    }
+    
+    .donation-form-container {
+        order: 2;
+    }
+}
+
+@media (max-width: 768px) {
+    .donate-hero {
+        grid-template-columns: 1fr !important;
+        gap: 2rem !important;
+    }
+    
+    .donate-hero-image {
+        order: -1;
+    }
+    
+    .donation-amounts {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+}
+
+.donation-form-container {
+    animation: fadeInUp 0.8s ease 0.2s both;
+}
+
+.donation-type-btn {
+    transition: all 0.3s ease;
+}
+
+.donation-type-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.amount-btn {
+    transition: all 0.3s ease;
+}
+
+.amount-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    border-color: var(--primary-teal) !important;
+}
+
+.amount-btn.active {
+    border-color: var(--primary-teal) !important;
+    background: var(--primary-teal) !important;
+    color: white !important;
+}
+
+.btn-donation:hover {
+    background: var(--dark-teal) !important;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(4, 49, 66, 0.4);
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive adjustments for donation page */
+@media (max-width: 768px) {
+    .impact-message ul {
+        font-size: 0.9rem;
+    }
+}

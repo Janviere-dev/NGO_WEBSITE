@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Hope for Tomorrow</title>
+    <link rel="icon" type="image/png" href="assets/favicon-32x32.png">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation - MiMa Style -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="assets/hope for tomorrow.jpeg" alt="Hope for Tomorrow logo" class="logo-image">
+                    </a>
+                </div>
+                <button class="mobile-menu-btn" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="programs.html">Programs</a></li>
+                    <li><a href="team.html">Team</a></li>
+                    <li><a href="contact.html" class="active">Contact Us</a></li>
+                </ul>
+                <div class="nav-donate">
+                    <a href="donate.html" class="btn-donate">Donate</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header page-header--with-image page-header--contact">
+        <div class="page-header-overlay"></div>
+        <div class="container">
+            <h1 class="page-title-line">Contact Us</h1>
+        </div>
+    </section>
+
+    <!-- Contact Content -->
+    <section class="page-content" style="padding: 60px 0;">
+        <div class="container">
+            <div class="content-section" style="margin-bottom: 2.5rem;">
+                <h2 class="title-with-line" style="margin-bottom: 1rem;">Get In Touch</h2>
+                <p style="margin: 0;">We'd love to hear from you! Whether you have questions about our programs, want to get involved, or just want to learn more about our work, feel free to reach out.</p>
+            </div>
+
+            <!-- Contact Info and Form Section -->
+            <div class="contact-wrapper">
+                <div class="contact-info-section">
+                    <div class="contact-info-card">
+                        <div class="contact-icon">
+                            <i class="fa fa-phone" aria-hidden="true"></i>
+                        </div>
+                        <h3>Phone</h3>
+                        <p>+250 788 925 278</p>
+                    </div>
+
+                    <div class="contact-info-card">
+                        <div class="contact-icon">
+                            <i class="fa fa-envelope" aria-hidden="true"></i>
+                        </div>
+                        <h3>Email</h3>
+                        <p>info@hopefortomorrow.org.rw</p>
+                    </div>
+
+                    <div class="contact-info-card">
+                        <div class="contact-icon">
+                            <i class="fa fa-map-marker" aria-hidden="true"></i>
+                        </div>
+                        <h3>Location</h3>
+                        <p>Kagano<br>Nyamasheke District<br>Western Province<br>Rwanda</p>
+                    </div>
+
+                    <div class="contact-social-section">
+                        <h3>Connect With Us</h3>
+                        <div class="contact-social-links">
+                            <a href="https://x.com/hopefotomorrow?s=21" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+                                <i class="fa fa-twitter" aria-hidden="true"></i>
+                            </a>
+                            <a href="https://www.instagram.com/hope_for_tomorrow1?igsh=Y2pxa3ZtMmhld3Qx&utm_source=qr" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                                <i class="fa fa-instagram" aria-hidden="true"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/company/hope-for-tomorro/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                                <i class="fa fa-linkedin" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form-section">
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName">First Name</label>
+                                <input type="text" id="firstName" name="firstName" placeholder="First name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName">Last Name</label>
+                                <input type="text" id="lastName" name="lastName" placeholder="Last name" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" name="phone" placeholder="+250..." required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" placeholder="you@example.com" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="3" placeholder="How can we help?" required></textarea>
+                        </div>
+                        <!-- Hidden field for Web3Forms -->
+                        <input type="hidden" name="access_key" value="4e5744b0-1e94-4d82-b128-d0a24e60d276">
+                        <input type="hidden" name="subject" value="New Contact Form Submission - Hope for Tomorrow">
+                        <input type="hidden" name="from_name" value="Hope for Tomorrow Website">
+                        <button type="submit" class="btn-submit">Send Message</button>
+                        <div id="form-status" style="margin-top: 1rem; font-weight: 500;"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partners Section - Horizontal Scrolling -->
+    <section class="partners">
+        <div class="partners-carousel">
+            <div class="partners-track">
+                <div class="partner-item">
+                    <img src="assets/YangJing.png" alt="Yang Jing Foundation">
+                </div>
+                <div class="partner-item">
+                    <img src="assets/new africa fund.jpg" alt="New Africa Fund">
+                </div>
+                <div class="partner-item">
+                    <img src="assets/asan.jpeg" alt="ASAN">
+                </div>
+                <!-- Duplicate for continuous scroll -->
+                <div class="partner-item">
+                    <img src="assets/YangJing.png" alt="Yang Jing Foundation">
+                </div>
+                <div class="partner-item">
+                    <img src="assets/new africa fund.jpg" alt="New Africa Fund">
+                </div>
+                <div class="partner-item">
+                    <img src="assets/asan.jpeg" alt="ASAN">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <a href="index.html">
+                            <img src="assets/hope for tomorrow.jpeg" alt="Hope for Tomorrow Logo">
+                        </a>
+                    </div>
+                    <p>Empowering rural youth through education, health, and opportunity.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="programs.html">Our Programs</a></li>
+                        <li><a href="team.html">Our Team</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>Email: info@hopefortomorrow.org.rw</p>
+                    <p>Phone: +250 788 925 278</p>
+                    <p>P.O. Box: 72 Nyamasheke</p>
+                    <div class="footer-social">
+                        <a href="https://x.com/hopefotomorrow?s=21" target="_blank" rel="noopener noreferrer" aria-label="Twitter">X</a>
+                        <a href="https://www.linkedin.com/company/hope-for-tomorro/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">in</a>
+                        <a href="https://www.instagram.com/hope_for_tomorrow1?igsh=Y2pxa3ZtMmhld3Qx&utm_source=qr" target="_blank" rel="noopener noreferrer" aria-label="Instagram">IG</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Hope for Tomorrow. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

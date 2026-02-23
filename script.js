@@ -318,6 +318,132 @@ if (contactForm) {
     });
 }
 
+// Donation Form Interactivity
+document.addEventListener('DOMContentLoaded', function() {
+    const donationTypeButtons = document.querySelectorAll('.donation-type-btn');
+    const amountButtons = document.querySelectorAll('.amount-btn');
+    const customAmountGroup = document.getElementById('customAmountGroup');
+    const customAmountInput = document.getElementById('customAmount');
+    const selectedAmountSpan = document.getElementById('selectedAmount');
+    const monthlyIndicators = document.querySelectorAll('.monthly-indicator');
+    
+    let isMonthly = false;
+    let selectedAmount = 15;
 
+    // Toggle donation type (once vs monthly)
+    if (donationTypeButtons.length > 0) {
+        donationTypeButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                // Remove active class from all buttons
+                donationTypeButtons.forEach(btn => {
+                    btn.classList.remove('active');
+                    btn.style.background = 'white';
+                    btn.style.color = 'var(--primary-teal)';
+                });
+                
+                // Add active class to clicked button
+                this.classList.add('active');
+                this.style.background = 'var(--primary-teal)';
+                this.style.color = 'white';
+                
+                // Update monthly status
+                isMonthly = this.dataset.type === 'monthly';
+                
+                // Show/hide monthly indicators
+                monthlyIndicators.forEach(indicator => {
+                    indicator.style.display = isMonthly ? 'inline' : 'none';
+                });
+            });
+        });
+    }
 
+    // Handle amount button clicks
+    if (amountButtons.length > 0) {
+        amountButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                // Remove active styling from all amount buttons
+                amountButtons.forEach(btn => {
+                    if (btn.dataset.amount !== 'custom') {
+                        btn.style.border = '2px solid #ddd';
+                        btn.style.background = 'white';
+                        btn.style.color = '#333';
+                    }
+                });
+                
+                const amount = this.dataset.amount;
+                
+                if (amount === 'custom') {
+                    // Show custom amount input
+                    if (customAmountGroup) {
+                        customAmountGroup.style.display = 'block';
+                    }
+                    this.style.border = '2px solid var(--primary-teal)';
+                    this.style.background = 'var(--primary-teal)';
+                    this.style.color = 'white';
+                } else {
+                    // Hide custom amount input
+                    if (customAmountGroup) {
+                        customAmountGroup.style.display = 'none';
+                    }
+                    
+                    // Highlight selected amount
+                    this.style.border = '2px solid var(--primary-teal)';
+                    this.style.background = 'var(--primary-teal)';
+                    this.style.color = 'white';
+                    
+                    // Update selected amount
+                    selectedAmount = parseInt(amount);
+                    updateImpactMessage(selectedAmount);
+                }
+            });
+        });
+    }
 
+    // Handle custom amount input
+    if (customAmountInput) {
+        customAmountInput.addEventListener('input', function() {
+            const value = parseInt(this.value) || 0;
+            if (value > 0) {
+                selectedAmount = value;
+                updateImpactMessage(selectedAmount);
+            }
+        });
+    }
+
+    // Update impact message based on amount
+    function updateImpactMessage(amount) {
+        if (selectedAmountSpan) {
+            selectedAmountSpan.textContent = '$' + amount;
+        }
+        
+        // You can add more dynamic impact messages based on different amounts
+        const impactMessage = document.querySelector('.impact-message ul');
+        if (impactMessage) {
+            if (amount >= 50) {
+                impactMessage.innerHTML = `
+                    <li>School supplies for 10 girls</li>
+                    <li>Health workshops for a community</li>
+                    <li>Full mentorship program for a year</li>
+                `;
+            } else if (amount >= 25) {
+                impactMessage.innerHTML = `
+                    <li>School supplies for 5 girls</li>
+                    <li>Health education materials</li>
+                    <li>Skills training session</li>
+                `;
+            } else if (amount >= 15) {
+                impactMessage.innerHTML = `
+                    <li>School supplies for 3 girls</li>
+                    <li>Health education workshops</li>
+                    <li>Mentorship program access</li>
+                `;
+            } else if (amount >= 10) {
+                impactMessage.innerHTML = `
+                    <li>School supplies for 2 girls</li>
+                    <li>Health education materials</li>
+                    <li>Basic mentorship support</li>
+                `;
+            }
+        }
+    }
+});

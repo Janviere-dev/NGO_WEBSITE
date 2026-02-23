@@ -31,6 +31,7 @@
                     <li><a href="about.html">About Us</a></li>
                     <li><a href="programs.html">Programs</a></li>
                     <li><a href="team.html">Team</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
                 </ul>
                 <div class="nav-donate">
                     <a href="donate.html" class="btn-donate">Donate</a>
@@ -43,26 +44,76 @@
     <section class="page-header page-header--with-image page-header--donate">
         <div class="page-header-overlay"></div>
         <div class="container">
+            <h1 class="page-title-line">Donate</h1>
         </div>
     </section>
 
     <!-- Donate Content -->
     <section class="page-content">
         <div class="container">
-            <div class="content-section">
-                <h1 class="title-with-line">Donate</h1>
-                <p>Hope for Tomorrow is a legally registered national non-governmental organization in Rwanda. Your support helps us empower girls and young women through education, reproductive health, and economic opportunities. You can make a donation using a credit or debit card, payPal or donate directly to our Rwandan bank account:</p>
+            <div class="content-section" style="text-align: center; margin-bottom: 3rem;">
+                <h2 style="font-size: 2.5rem; color: var(--dark-teal); margin-bottom: 1rem; font-weight: 700;">Empower Young Girls and Women</h2>
+                <p style="max-width: 800px; margin: 0 auto; font-size: 1.1rem;">Your generosity transforms lives. Make a donation today to provide education, healthcare, and opportunities to young women in rural Rwanda.</p>
             </div>
 
-            <div class="content-section" style="background: var(--light-blue); padding: 3rem; border-radius: 12px; margin-bottom: 4rem;">
-                <h2 class="title-with-line">Bank Account Details</h2>
-                <div style="background: white; padding: 2rem; border-radius: 8px;">
-                    <p style="margin-bottom: 0.5rem;"><strong>Bank Name:</strong> Access Bank Rwanda Plc</p>
-                    <p style="margin-bottom: 0.5rem;"><strong>Account Number:</strong> 7002100103409601</p>
-                    <p style="margin-bottom: 0.5rem;"><strong>SWIFT Code:</strong> BKORRWRW</p>
+            <!-- Side by Side: Image and Donation Form -->
+            <div class="donate-side-by-side" style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-bottom: 4rem; align-items: start;">
+                <!-- Left Side: Image with caption -->
+                <div class="donate-image-section">
+                    <img src="assets/donate.jpeg" alt="Girls education program" style="width: 100%; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); margin-bottom: 1.5rem;">
+                    <h3 style="font-size: 1.5rem; color: var(--dark-teal); margin-bottom: 1rem; font-weight: 700;">Transform Lives. Empower Dreams.</h3>
+                    <p style="font-size: 1rem; line-height: 1.7; margin-bottom: 1rem;">Your donation directly supports girls and young women in rural Rwanda to stay in school, access reproductive health support, and gain the skills they need to become independent and lead healthier, empowered lives.</p>
+                    <p style="font-size: 1rem; line-height: 1.7; color: var(--primary-teal); font-weight: 600; font-style: italic;">Together, we can build a future where every girl has hope for tomorrow.</p>
                 </div>
-                <p style="margin-top: 2rem;">For any questions or assistance with your donation, please contact us at info@hopefortomorrow.org.</p>
+
+                <!-- Right Side: Donation Form -->
+                <div class="donation-form-container" style="background: var(--bg-light); padding: 2.5rem; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.08);">
+                    <div class="donation-type-toggle" style="display: flex; gap: 1rem; margin-bottom: 2rem;">
+                        <button class="donation-type-btn active" data-type="once" style="flex: 1; padding: 1rem; border: 2px solid var(--primary-teal); background: var(--primary-teal); color: white; border-radius: 8px; font-weight: 600; cursor: pointer; font-size: 1rem;">Give once</button>
+                        <button class="donation-type-btn" data-type="monthly" style="flex: 1; padding: 1rem; border: 2px solid var(--primary-teal); background: white; color: var(--primary-teal); border-radius: 8px; font-weight: 600; cursor: pointer; font-size: 1rem;"> Give monthly</button>
+                    </div>
+
+                    <div style="text-align: center; margin-bottom: 1.5rem;">
+                        <p style="color: var(--primary-pink); font-style: italic; font-weight: 500; font-size: 0.95rem;">Thanks for making a lasting different through supporting young girls and women</p>
+                    </div>
+
+                    <form class="donation-form" id="donationForm">
+                        <div class="donation-amounts" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.8rem; margin-bottom: 1.5rem;">
+                            <button type="button" class="amount-btn" data-amount="10" style="padding: 1rem; border: 2px solid #ddd; background: white; border-radius: 8px; font-weight: 600; font-size: 1rem; cursor: pointer; transition: all 0.3s;">$10<span class="monthly-indicator" style="display: none; font-size: 0.75rem; color: var(--primary-teal);">/mo</span></button>
+                            <button type="button" class="amount-btn active" data-amount="15" style="padding: 1rem; border: 2px solid var(--primary-teal); background: var(--primary-teal); color: white; border-radius: 8px; font-weight: 600; font-size: 1rem; cursor: pointer; transition: all 0.3s;">$15<span class="monthly-indicator" style="display: none; font-size: 0.75rem;">/mo</span></button>
+                            <button type="button" class="amount-btn" data-amount="20" style="padding: 1rem; border: 2px solid #ddd; background: white; border-radius: 8px; font-weight: 600; font-size: 1rem; cursor: pointer; transition: all 0.3s;">$20<span class="monthly-indicator" style="display: none; font-size: 0.75rem; color: var(--primary-teal);">/mo</span></button>
+                            <button type="button" class="amount-btn" data-amount="25" style="padding: 1rem; border: 2px solid #ddd; background: white; border-radius: 8px; font-weight: 600; font-size: 1rem; cursor: pointer; transition: all 0.3s;">$25<span class="monthly-indicator" style="display: none; font-size: 0.75rem; color: var(--primary-teal);">/mo</span></button>
+                            <button type="button" class="amount-btn" data-amount="50" style="padding: 1rem; border: 2px solid #ddd; background: white; border-radius: 8px; font-weight: 600; font-size: 1rem; cursor: pointer; transition: all 0.3s;">$50<span class="monthly-indicator" style="display: none; font-size: 0.75rem; color: var(--primary-teal);">/mo</span></button>
+                            <button type="button" class="amount-btn" data-amount="custom" style="padding: 1rem; border: 2px solid #ddd; background: white; border-radius: 8px; font-weight: 600; font-size: 1rem; cursor: pointer; transition: all 0.3s;">$ Other<span class="monthly-indicator" style="display: none; font-size: 0.75rem; color: var(--primary-teal);">/mo</span></button>
+                        </div>
+
+                        <div class="form-group" id="customAmountGroup" style="display: none; margin-bottom: 1.5rem;">
+                            <label for="customAmount" style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Custom Amount ($)</label>
+                            <input type="number" id="customAmount" name="customAmount" placeholder="Enter amount" min="1" style="width: 100%; padding: 0.8rem; border: 2px solid #ddd; border-radius: 8px; font-size: 1rem;">
+                        </div>
+
+                        <div class="impact-message" style="background: #f0f9ff; padding: 1.2rem; border-radius: 8px; margin-bottom: 1.5rem; border-left: 4px solid var(--primary-teal);">
+                            <p style="margin: 0; font-weight: 600; color: var(--dark-teal); font-size: 0.95rem;">Your donation of <span id="selectedAmount">$15</span> can provide:</p>
+                            <ul style="margin-top: 0.5rem; padding-left: 1.5rem; font-size: 0.9rem;">
+                                <li>School supplies for 3 girls</li>
+                                <li>Health education workshops</li>
+                                <li>Mentorship program access</li>
+                            </ul>
+                        </div>
+
+                        <div style="margin-bottom: 1.5rem;">
+                            <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+                                <input type="checkbox" id="maximizeDonation" style="width: 18px; height: 18px;">
+                                <span style="font-size: 0.9rem; font-weight: 500;">Maximize my donation</span>
+                            </label>
+                        </div>
+
+                        <button type="button" onclick="window.open('https://give-usa.keela.co/hope-for-tomorrow-donate-page', '_blank')" class="btn-donation" style="width: 100%; padding: 1.2rem; background: var(--primary-teal); color: white; border: none; border-radius: 8px; font-weight: 700; font-size: 1rem; cursor: pointer; transition: all 0.3s;">COMPLETE YOUR DONATION →</button>
+                    </form>
+                </div>
             </div>
+
+
 
             <div class="content-section">
                 <h2 class="title-with-line">Volunteer</h2>
@@ -96,7 +147,7 @@
                 </div>
             </div>
 
-            <div class="content-section" style="background: var(--bg-light); padding: 3rem; border-radius: 12px; text-align: center;">
+            <!-- <div class="content-section" style="background: var(--bg-light); padding: 3rem; border-radius: 12px; text-align: center;">
                 <h2 class="title-with-line">Contact Us</h2>
                 <form class="contact-form" id="contactForm">
                     <div class="form-row">
@@ -123,14 +174,13 @@
                         <label for="message">Message</label>
                         <textarea id="message" name="message" rows="4" placeholder="How can we help?" required></textarea>
                     </div>
-                    <!-- Hidden field for Web3Forms -->
                     <input type="hidden" name="access_key" value="4e5744b0-1e94-4d82-b128-d0a24e60d276">
                     <input type="hidden" name="subject" value="New Contact Form Submission - Hope for Tomorrow">
                     <input type="hidden" name="from_name" value="Hope for Tomorrow Website">
                     <button type="submit" class="btn btn-primary">Submit</button>
                     <div id="form-status" style="margin-top: 1rem; font-weight: 500;"></div>
                 </form>
-            </div>
+            </div> -->
         </div>
     </section>
 
@@ -179,13 +229,14 @@
                         <li><a href="about.html">About Us</a></li>
                         <li><a href="programs.html">Our Programs</a></li>
                         <li><a href="team.html">Our Team</a></li>
-                        <li><a href="impact.html">Impact</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
                     <h4>Contact</h4>
                     <p>Email: info@hopefortomorrow.org.rw</p>
                     <p>Phone: +250 788 925 278</p>
+                    <p>P.O. Box: 72 Nyamasheke</p>
                     <div class="footer-social">
                         <a href="https://x.com/hopefotomorrow?s=21" target="_blank" rel="noopener noreferrer" aria-label="Twitter">X</a>
                         <a href="https://www.linkedin.com/company/hope-for-tomorro/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">in</a>
