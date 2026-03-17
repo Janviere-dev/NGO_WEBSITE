@@ -410,40 +410,40 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Update impact message based on amount
-    function updateImpactMessage(amount) {
-        if (selectedAmountSpan) {
-            selectedAmountSpan.textContent = '$' + amount;
-        }
+    // // Update impact message based on amount
+    // function updateImpactMessage(amount) {
+    //     if (selectedAmountSpan) {
+    //         selectedAmountSpan.textContent = '$' + amount;
+    //     }
         
-        // You can add more dynamic impact messages based on different amounts
-        const impactMessage = document.querySelector('.impact-message ul');
-        if (impactMessage) {
-            if (amount >= 50) {
-                impactMessage.innerHTML = `
-                    <li>School supplies for 10 girls</li>
-                    <li>Health workshops for a community</li>
-                    <li>Full mentorship program for a year</li>
-                `;
-            } else if (amount >= 25) {
-                impactMessage.innerHTML = `
-                    <li>School supplies for 5 girls</li>
-                    <li>Health education materials</li>
-                    <li>Skills training session</li>
-                `;
-            } else if (amount >= 15) {
-                impactMessage.innerHTML = `
-                    <li>School supplies for 3 girls</li>
-                    <li>Health education workshops</li>
-                    <li>Mentorship program access</li>
-                `;
-            } else if (amount >= 10) {
-                impactMessage.innerHTML = `
-                    <li>School supplies for 2 girls</li>
-                    <li>Health education materials</li>
-                    <li>Basic mentorship support</li>
-                `;
-            }
-        }
-    }
+    //     // You can add more dynamic impact messages based on different amounts
+    //     const impactMessage = document.querySelector('.impact-message ul');
+    //     if (impactMessage) {
+    //         if (amount >= 50) {
+    //             impactMessage.innerHTML = `
+    //                 <li>School supplies for 10 girls</li>
+    //                 <li>Health workshops for a community</li>
+    //                 <li>Full mentorship program for a year</li>
+    //             `;
+    //         } else if (amount >= 25) {
+    //             impactMessage.innerHTML = `
+    //                 <li>School supplies for 5 girls</li>
+    //                 <li>Health education materials</li>
+    //                 <li>Skills training session</li>
+    //             `;
+    //         } else if (amount >= 15) {
+    //             impactMessage.innerHTML = `
+    //                 <li>School supplies for 3 girls</li>
+    //                 <li>Health education workshops</li>
+    //                 <li>Mentorship program access</li>
+    //             `;
+    //         } else if (amount >= 10) {
+    //             impactMessage.innerHTML = `
+    //                 <li>School supplies for 2 girls</li>
+    //                 <li>Health education materials</li>
+    //                 <li>Basic mentorship support</li>
+    //             `;
+    //         }
+    //     }
+    // }
 });

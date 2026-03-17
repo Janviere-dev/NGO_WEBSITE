@@ -205,19 +205,19 @@ body {
 .hero-slide:nth-child(1) {
     /* background: linear-gradient(to bottom right, var(--dark-teal), var(--light-teal)); */
     background-color: var(--dark-teal);
-    background-image: url('assets/rural\ youth.jpg');
+    background-image: url('assets/picture1.png');
 }
 
 .hero-slide:nth-child(2) {
     /* background: linear-gradient(to bottom right, var(--dark-teal), var(--light-teal)); */
     background-color: var(--dark-teal);
-    background-image: url('assets/education\ for\ all.jpg');
+    background-image: url('assets/picture\ 2.png');
 }
 
 .hero-slide:nth-child(3) {
     background: linear-gradient(to bottom right, var(--dark-teal), var(--light-teal));
     background-color: var(--dark-teal);
-    background-image: url('assets/teen\ mothers.JPG');
+    background-image: url('assets/picture\ 3.png');
 }
 
 .hero-overlay {
