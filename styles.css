@@ -226,7 +226,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(to bottom right, rgba(4, 49, 66, 0.85), rgba(18, 93, 111, 0.75));
+    background: linear-gradient(to bottom right, rgba(4, 49, 66, 0.55), rgba(18, 93, 111, 0.45));
 }
 
 .hero-content {
@@ -244,6 +244,21 @@ body {
     margin-bottom: 1.5rem;
     line-height: 1.2;
     animation: fadeInUp 0.8s ease;
+    color: #f5a623;
+    text-shadow: 1px 2px 8px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.hero-subtitle-inline {
+    font-size: 1.15rem;
+    font-weight: 400;
+    color: #ffffff;
+    text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.4);
+    line-height: 1.6;
+    max-width: 700px;
+    margin: 0 auto;
 }
 
 .hero-subtitle {
