@@ -16,7 +16,7 @@
     --brand-green-deep: #487800;
     --brand-orange: #FA8C00;
     --brand-orange-deep: #D97600;
-    accent: #F5F2E7;
+    --accent: #F5F2E7;
     --paper-dim: #ECE7D6;
     --line: rgba(19, 34, 29, 0.12);
 
@@ -1651,6 +1651,19 @@ h1, h2, h3 {
     gap: 2.5rem;
 }
 
+/* Core team grid only (not .advisors-grid): fixed-width cards so rows
+   hold 3 across, and an incomplete last row centers instead of hugging
+   the left edge. */
+.team-grid:not(.advisors-grid) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.team-grid:not(.advisors-grid) > .team-member {
+    flex: 0 0 300px;
+}
+
 /* Flip cards: click/tap the card to turn it over and read the bio */
 .team-member {
     perspective: 1400px;
@@ -2345,6 +2358,11 @@ h1, h2, h3 {
     .team-grid {
         grid-template-columns: 1fr;
         gap: 2rem;
+    }
+
+    .team-grid:not(.advisors-grid) > .team-member {
+        flex: 1 1 100%;
+        max-width: 320px;
     }
 
     .team-card-front h3,
