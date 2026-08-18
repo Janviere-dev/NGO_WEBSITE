@@ -87,34 +87,22 @@ if (slides.length > 0) {
     });
 }
 
-// Navbar scroll effect - Transparent at top, orange on scroll, disappear on more scroll
+// Navbar scroll effect - solid from first load, hides on scroll down, returns on scroll up
 let lastScroll = 0;
 const navbar = document.querySelector('.navbar');
-const scrollThresholdOrange = 50;    // When to turn orange
-const scrollThresholdHide = 150;     // When to disappear
+const scrollHideThreshold = 80; // ignore the small jitter right at the top
 
 window.addEventListener('scroll', () => {
     const currentScroll = window.pageYOffset;
-    
-    // At top - transparent navbar, visible
-    if (currentScroll <= scrollThresholdOrange) {
-        navbar.classList.remove('scrolled');
-        navbar.classList.remove('scroll-down');
-        lastScroll = currentScroll;
-        return;
+
+    if (currentScroll <= scrollHideThreshold) {
+        navbar.classList.remove('nav-hidden');
+    } else if (currentScroll > lastScroll) {
+        navbar.classList.add('nav-hidden');
+    } else {
+        navbar.classList.remove('nav-hidden');
     }
-    
-    // Small scroll - make navbar orange
-    if (currentScroll > scrollThresholdOrange && currentScroll <= scrollThresholdHide) {
-        navbar.classList.add('scrolled');
-        navbar.classList.remove('scroll-down');
-    }
-    
-    // More scroll - hide navbar
-    if (currentScroll > scrollThresholdHide) {
-        navbar.classList.add('scroll-down');
-    }
-    
+
     lastScroll = currentScroll;
 });
 
@@ -174,28 +162,15 @@ document.querySelectorAll('.program-card, .mv-card, .team-member, .value-item, .
     observer.observe(el);
 });
 
-// Mission & vision cards - group behavior (click one, open/close both)
-const mvCards = document.querySelectorAll('.mission-vision-cards .interactive-card');
-mvCards.forEach(card => {
-    card.addEventListener('click', () => {
-        const anyActive = Array.from(mvCards).some(c => c.classList.contains('active'));
-        if (anyActive) {
-            mvCards.forEach(c => c.classList.remove('active'));
-        } else {
-            mvCards.forEach(c => c.classList.add('active'));
-        }
-    });
-});
+// Team member cards - click or press Enter/Space to flip and reveal the bio
+document.querySelectorAll('.team-card').forEach(card => {
+    const flip = () => card.closest('.team-member').classList.toggle('flipped');
 
-// Core values - group behavior (click one, open/close all together)
-const valueCards = document.querySelectorAll('.value-card');
-valueCards.forEach(card => {
-    card.addEventListener('click', () => {
-        const anyActive = Array.from(valueCards).some(c => c.classList.contains('active'));
-        if (anyActive) {
-            valueCards.forEach(c => c.classList.remove('active'));
-        } else {
-            valueCards.forEach(c => c.classList.add('active'));
+    card.addEventListener('click', flip);
+    card.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            flip();
         }
     });
 });
@@ -338,13 +313,13 @@ document.addEventListener('DOMContentLoaded', function() {
                 donationTypeButtons.forEach(btn => {
                     btn.classList.remove('active');
                     btn.style.background = 'white';
-                    btn.style.color = 'var(--primary-teal)';
+                    btn.style.color = 'var(--gold)';
                 });
                 
                 // Add active class to clicked button
                 this.classList.add('active');
-                this.style.background = 'var(--primary-teal)';
-                this.style.color = 'white';
+                this.style.background = 'var(--gold)';
+                this.style.color = 'var(--ink)';
                 
                 // Update monthly status
                 isMonthly = this.dataset.type === 'monthly';
@@ -377,9 +352,9 @@ document.addEventListener('DOMContentLoaded', function() {
                     if (customAmountGroup) {
                         customAmountGroup.style.display = 'block';
                     }
-                    this.style.border = '2px solid var(--primary-teal)';
-                    this.style.background = 'var(--primary-teal)';
-                    this.style.color = 'white';
+                    this.style.border = '2px solid var(--gold)';
+                    this.style.background = 'var(--gold)';
+                    this.style.color = 'var(--ink)';
                 } else {
                     // Hide custom amount input
                     if (customAmountGroup) {
@@ -387,9 +362,9 @@ document.addEventListener('DOMContentLoaded', function() {
                     }
                     
                     // Highlight selected amount
-                    this.style.border = '2px solid var(--primary-teal)';
-                    this.style.background = 'var(--primary-teal)';
-                    this.style.color = 'white';
+                    this.style.border = '2px solid var(--gold)';
+                    this.style.background = 'var(--gold)';
+                    this.style.color = 'var(--ink)';
                     
                     // Update selected amount
                     selectedAmount = parseInt(amount);

@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- Navigation - MiMa Style -->
@@ -17,7 +17,8 @@
             <div class="nav-wrapper">
                 <div class="logo">
                     <a href="index.html">
-                        <img src="assets/hope for tomorrow.jpeg" alt="Hope for Tomorrow logo" class="logo-image">
+                        <img src="assets/hope-for-tomorrow-logo.png" alt="Hope for Tomorrow logo" class="logo-image">
+                        <span class="logo-text">Hope for Tomorrow</span>
                     </a>
                 </div>
                 <button class="mobile-menu-btn" aria-label="Toggle menu">
@@ -29,7 +30,7 @@
                     <li><a href="index.html" class="active">Home</a></li>
                     <li><a href="about.html">About Us</a></li>
                     <li><a href="programs.html">Programs</a></li>
-                    <!-- <li><a href="team.html">Team</a></li> -->
+                    <li><a href="team.html">Team</a></li>
                     <li><a href="contact.html">Contact Us</a></li>
                 </ul>
                 <div class="nav-donate">
@@ -39,44 +40,21 @@
         </div>
     </nav>
 
-    <!-- Hero Slider Section -->
+    <!-- Hero Section -->
     <section class="hero-slider">
         <div class="slider-container">
-            <div class="hero-slide active">
-                <div class="hero-overlay"></div>
-                <div class="hero-content">
-                    <div class="container">
-                        <h1 class="hero-title">Hope for Tomorrow<span class="hero-subtitle-inline">Empowering women and youth to build skills, access essential reproductive health services, and lead positive change in their communities.</span></h1>
-                        <div class="hero-buttons">
-                            <a href="donate.html" class="btn btn-primary">Get Involved</a>
-                            <a href="about.html" class="btn btn-secondary">Learn More</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="hero-slide">
-                <div class="hero-overlay"></div>
-                <div class="hero-content">
-                    <div class="container">
-                        <h1 class="hero-title">Hope for Tomorrow<span class="hero-subtitle-inline">Empowering women and youth to build skills, access essential reproductive health services, and lead positive change in their communities.</span></h1>
-                        <div class="hero-buttons">
-                            <a href="donate.html" class="btn btn-primary">Get Involved</a>
-                            <a href="about.html" class="btn btn-secondary">Learn More</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="hero-slide">
-                <div class="hero-overlay"></div>
-                <div class="hero-content">
-                    <div class="container">
-                        <h1 class="hero-title">Hope for Tomorrow<span class="hero-subtitle-inline">Empowering women and youth to build skills, access essential reproductive health services, and lead positive change in their communities.</span></h1>
-                        <div class="hero-buttons">
-                            <a href="donate.html" class="btn btn-primary">Get Involved</a>
-                            <a href="about.html" class="btn btn-secondary">Learn More</a>
-                        </div>
-                    </div>
-                </div>
+            <div class="hero-slide active"></div>
+            <div class="hero-slide"></div>
+            <div class="hero-slide"></div>
+        </div>
+        <div class="hero-scrim"></div>
+        <div class="hero-copy">
+            <div class="eyebrow">Nyamasheke, Rwanda</div>
+            <h1 class="hero-title">Hope for <span class="accent">Tomorrow</span></h1>
+            <p class="hero-subtitle-inline">Empowering women and youth to build skills, access essential reproductive health services, and lead positive change in their communities.</p>
+            <div class="hero-buttons">
+                <a href="donate.html" class="btn btn-primary">Get Involved</a>
+                <a href="about.html" class="btn btn-secondary">Learn More</a>
             </div>
         </div>
         <div class="slider-indicators">
@@ -90,68 +68,80 @@
     <section class="mission-vision">
         <div class="container">
             <div class="mv-grid">
-                <div class="mv-card">
-                    <h2 class="mv-title">Mission</h2>
-                    <p class="mv-text">Our mission is to support and empower rural youth, through sexual reproductive health, capacity building, and girls' education to improve their health and socioeconomic well-being.</p>
+                <div class="mv-card-stack">
+                    <div class="mv-card-backer"></div>
+                    <div class="mv-card">
+                        <div class="mv-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M4 13c0 3.5 2.2 5.5 8 5.5s8-2 8-5.5"></path>
+                                <path d="M4 13c1-1.3 2.4-1.8 3.2-1.4"></path>
+                                <path d="M20 13c-1-1.3-2.4-1.8-3.2-1.4"></path>
+                                <path d="M7 15.5v1.6"></path>
+                                <path d="M17 15.5v1.6"></path>
+                                <path d="M12 11V7"></path>
+                                <path d="M12 7c-2 0-3.3-1.2-3.3-3.2C10.7 3.8 12 5 12 7z"></path>
+                                <path d="M12 7c2 0 3.3-1.2 3.3-3.2C13.3 3.8 12 5 12 7z"></path>
+                            </svg>
+                        </div>
+                        <h2 class="mv-title">Mission</h2>
+                        <p class="mv-text">Our mission is to support and empower rural youth, through sexual reproductive health, capacity building, and girls' education to improve their health and socioeconomic well-being.</p>
+                    </div>
                 </div>
-                <div class="mv-card">
-                    <h2 class="mv-title">Vision</h2>
-                    <p class="mv-text">We envision a society where rural youth can achieve their full potential in health, education, and socioeconomic well-being.</p>
+                <div class="mv-card-stack">
+                    <div class="mv-card-backer"></div>
+                    <div class="mv-card">
+                        <div class="mv-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M2 12s4-6.5 10-6.5S22 12 22 12s-4 6.5-10 6.5S2 12 2 12z"></path>
+                                <circle cx="12" cy="12" r="2.8"></circle>
+                                <path d="M6.5 6.5 5 4"></path>
+                                <path d="M12 5.2V3"></path>
+                                <path d="M17.5 6.5 19 4"></path>
+                            </svg>
+                        </div>
+                        <h2 class="mv-title">Vision</h2>
+                        <p class="mv-text">We envision a society where rural youth can achieve their full potential in health, education, and socioeconomic well-being.</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Mission & Vision Section
-    <section class="mission-vision">
-        <div class="container">
-            <div class="mv-grid">
-                <div class="mv-card">
-                    <h2 class="mv-title">Mission</h2>
-                    <p class="mv-text">Our mission is to support and empower rural youth, through sexual reproductive health, capacity building, and girls' education to improve their health and socioeconomic well-being.</p>
-                </div>
-                <div class="mv-card">
-                    <h2 class="mv-title">Vision</h2>
-                    <p class="mv-text">We envision a society where rural youth can achieve their full potential in health, education, and socioeconomic well-being.</p>
-                </div>
-            </div>
-        </div>
-    </section> -->
-
     <!-- Programs Preview -->
     <section class="programs-preview">
         <div class="container">
             <h2 class="section-title">What we do</h2>
-            <div class="programs-grid">
-                <div class="program-card">
-                    <div class="program-image">
-                        <img src="assets/education-suppoert-image.jpg" alt="Menstrual Health & Bodily Autonomy">
-                    </div>
-                    <div class="program-content">
-                        <h3>Sexual and Reproductive Health & Wellbeing</h3>
-                        <p>The Sexual and Reproductive Health & WellbeingProgram works to provide accurate, age-appropriate, and rights-based information on sexual and reproductive health to adolescents and women, with the aim of breaking deeply rooted myths, stigma, and misinformation and availing resources.</p>
-                        <a href="programs.html#menstrual-health" class="btn-link">Read More</a>
-                    </div>
+            <div class="program-row">
+                <div class="program-row-img">
+                    <img src="assets/education-suppoert-image.jpg" alt="Menstrual Health & Bodily Autonomy">
                 </div>
-                <div class="program-card">
-                    <div class="program-image">
-                        <img src="assets/Isaro-image.jpg" alt="Girls’ Education &amp; Life Pathways">
-                    </div>
-                    <div class="program-content">
-                        <h3>Girls’ Education & Life Pathways</h3>
-                        <p>The Girls’ Education & Scholarship Program works to ensure that girls from marginalized communities can access, remain in, and complete their education, while building their agency.</p>
-                        <a href="programs.html#girls-education" class="btn-link">Read More</a>
-                    </div>
+                <div class="program-row-content">
+                    <span class="program-tag">Health & Wellbeing</span>
+                    <h3>Sexual and Reproductive Health & Wellbeing</h3>
+                    <p>The Sexual and Reproductive Health & WellbeingProgram works to provide accurate, age-appropriate, and rights-based information on sexual and reproductive health to adolescents and women, with the aim of breaking deeply rooted myths, stigma, and misinformation and availing resources.</p>
+                    <a href="programs.html#menstrual-health" class="program-row-link">Read More</a>
                 </div>
-                <div class="program-card">
-                    <div class="program-image">
-                        <img src="assets/teen-mothers-empowerment.jpg" alt="Adolescent &amp; Youth Sexual and Reproductive Health">
-                    </div>
-                    <div class="program-content">
-                        <h3>Women's Skills and Livelihoods Program (WSL)</h3>
-                        <p>The Women’s Social Entrepreneurship & Economic Empowerment Program supports young women to build sustainable livelihoods, become active members of the workforce, and contribute meaningfully to their communities.</p>
-                        <a href="programs.html#aysrh" class="btn-link">Read More</a>
-                    </div>
+            </div>
+            <div class="program-row">
+                <div class="program-row-img">
+                    <img src="assets/Isaro-image.jpg" alt="Girls’ Education &amp; Life Pathways">
+                </div>
+                <div class="program-row-content">
+                    <span class="program-tag">Education & Life Pathways</span>
+                    <h3>Girls’ Education & Life Pathways</h3>
+                    <p>The Girls’ Education & Scholarship Program works to ensure that girls from marginalized communities can access, remain in, and complete their education, while building their agency.</p>
+                    <a href="programs.html#girls-education" class="program-row-link">Read More</a>
+                </div>
+            </div>
+            <div class="program-row">
+                <div class="program-row-img">
+                    <img src="assets/teen-mothers-empowerment.jpg" alt="Adolescent &amp; Youth Sexual and Reproductive Health">
+                </div>
+                <div class="program-row-content">
+                    <span class="program-tag">Skills & Livelihoods</span>
+                    <h3>Women's Skills and Livelihoods Program (WSL)</h3>
+                    <p>The Women’s Social Entrepreneurship & Economic Empowerment Program supports young women to build sustainable livelihoods, become active members of the workforce, and contribute meaningfully to their communities.</p>
+                    <a href="programs.html#aysrh" class="program-row-link">Read More</a>
                 </div>
             </div>
         </div>
@@ -178,36 +168,27 @@
     <!-- Impact Section -->
     <section class="impact-preview">
         <div class="container">
-            <h2 class="impact-title">Our Impact</h2>
-            
-            <!-- Impact Stats -->
-            <div class="impact-stats">
-                <div class="stat-card">
-                    <div class="stat-number counter" data-target="53">0</div>
-                    <div class="stat-label">Scholarships</div>
+            <div class="eyebrow">Our Impact, Counted</div>
+            <h2 class="impact-title">Numbers we can stand behind.</h2>
+            <div class="impact-stat-row">
+                <div class="impact-stat">
+                    <span class="impact-stat-num counter" data-target="53">0</span>
+                    <span class="impact-stat-label">Scholarships awarded</span>
                 </div>
-                <div class="stat-card">
-                    <div class="stat-number counter" data-target="1500">0</div>
-                    <div class="stat-label">Adolescents & Women Reached</div>
+                <div class="impact-stat">
+                    <span class="impact-stat-num counter" data-target="1500">0</span>
+                    <span class="impact-stat-label">Adolescents & women reached</span>
                 </div>
-                <div class="stat-card">
-                    <div class="stat-number counter" data-target="600">0</div>
-                    <div class="stat-label">Menstrual Products</div>
+                <div class="impact-stat">
+                    <span class="impact-stat-num counter" data-target="600">0</span>
+                    <span class="impact-stat-label">Menstrual products distributed</span>
                 </div>
-                <div class="stat-card">
-                    <div class="stat-number counter" data-target="50">0</div>
-                    <div class="stat-label">People with Disabilities</div>
-                </div>
-            </div>
-
-            <div class="impact-content">
-                <div class="impact-text">
-                    <p>We address the urgent need for sexual and reproductive health (SRH) education and support for girls in rural areas of Rwanda. We break the silence and provide comprehensive SRH education, focusing on empowering young girls and preventing challenges caused by lack of information.</p>
-                </div>
-                <div class="impact-image">
-                    <img src="assets/community-impact.jpg" alt="Community Impact">
+                <div class="impact-stat">
+                    <span class="impact-stat-num counter" data-target="50">0</span>
+                    <span class="impact-stat-label">People with disabilities supported</span>
                 </div>
             </div>
+            <p class="impact-note">We address the urgent need for sexual and reproductive health (SRH) education and support for girls in rural areas of Rwanda. We break the silence and provide comprehensive SRH education, focusing on empowering young girls and preventing challenges caused by lack of information.</p>
         </div>
     </section>
 
@@ -245,7 +226,7 @@
                 <div class="footer-section">
                     <div class="footer-logo">
                         <a href="index.html">
-                            <img src="assets/hope for tomorrow.jpeg" alt="Hope for Tomorrow Logo">
+                            <img src="assets/hope-for-tomorrow-logo.png" alt="Hope for Tomorrow Logo">
                         </a>
                     </div>
                     <p>Empowering rural youth through education, health, and opportunity.</p>
