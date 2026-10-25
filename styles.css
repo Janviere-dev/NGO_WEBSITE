@@ -223,6 +223,154 @@ h1, h2, h3 {
     box-shadow: 0 4px 12px rgba(250, 140, 0, 0.4);
 }
 
+/* Updates dropdown */
+.nav-dropdown {
+    position: relative;
+}
+
+.nav-dropdown::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    right: -10px;
+    left: -10px;
+    height: 15px;
+}
+
+.nav-dropdown-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: var(--ink);
+    cursor: pointer;
+    font: inherit;
+    font-size: 15px;
+    font-weight: 500;
+    position: relative;
+}
+
+.nav-dropdown-chevron {
+    width: 7px;
+    height: 7px;
+    margin-top: -4px;
+    border-right: 1.5px solid currentColor;
+    border-bottom: 1.5px solid currentColor;
+    transform: rotate(45deg);
+    transition: transform 0.2s ease;
+}
+
+.nav-dropdown-toggle:hover,
+.nav-dropdown.is-active .nav-dropdown-toggle {
+    color: var(--gold);
+}
+
+.nav-dropdown.is-active .nav-dropdown-toggle::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    bottom: -8px;
+    left: 0;
+    height: 2px;
+    background: var(--gold);
+}
+
+.nav-dropdown-toggle:focus-visible,
+.nav-dropdown-menu a:focus-visible {
+    outline: 2px solid var(--gold);
+    outline-offset: 4px;
+}
+
+.nav-dropdown-menu {
+    position: absolute;
+    top: calc(100% + 15px);
+    left: 50%;
+    z-index: 1002;
+    min-width: 150px;
+    margin: 0;
+    padding: 8px;
+    list-style: none;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    background: var(--white);
+    box-shadow: 0 12px 26px rgba(19, 34, 29, 0.15);
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(-50%, -6px);
+    transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
+    visibility: hidden;
+}
+
+.nav-dropdown:hover .nav-dropdown-menu,
+.nav-dropdown:focus-within .nav-dropdown-menu,
+.nav-dropdown.is-open .nav-dropdown-menu {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(-50%, 0);
+    visibility: visible;
+}
+
+.nav-dropdown.is-open .nav-dropdown-chevron {
+    transform: rotate(225deg);
+    margin-top: 4px;
+}
+
+.nav-dropdown-menu li {
+    margin: 0;
+    white-space: nowrap;
+}
+
+.nav-dropdown-menu a {
+    display: block;
+    padding: 9px 11px;
+    border-radius: 6px;
+    color: var(--ink);
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.nav-dropdown-menu a:hover,
+.nav-dropdown-menu a[aria-current="page"] {
+    background: var(--accent);
+    color: var(--gold-deep);
+}
+
+/* Keep the expanded six-link navigation comfortably on one line until the
+   existing mobile menu takes over at 768px. */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .nav-wrapper {
+        gap: 1rem;
+    }
+
+    .logo-image {
+        height: 46px;
+    }
+
+    .logo-text {
+        font-size: 1rem;
+    }
+
+    .nav-menu {
+        gap: 0.8rem;
+    }
+
+    .nav-menu a {
+        font-size: 14px;
+        white-space: nowrap;
+    }
+
+    .nav-dropdown-toggle {
+        font-size: 14px;
+        white-space: nowrap;
+    }
+
+    .nav-donate .btn-donate {
+        padding: 9px 16px;
+    }
+}
+
 .social-icons {
     display: none;
 }
@@ -2071,6 +2219,49 @@ h1, h2, h3 {
 
     .nav-menu a:hover {
         color: var(--primary-blue);
+    }
+
+    .nav-dropdown-toggle {
+        width: 100%;
+        padding: 1rem 0;
+        justify-content: space-between;
+        font-size: 16px;
+    }
+
+    .nav-dropdown.is-active .nav-dropdown-toggle::after {
+        display: none;
+    }
+
+    .nav-dropdown-menu {
+        position: static;
+        display: none;
+        min-width: 0;
+        margin: 0;
+        padding: 0 0 0.45rem;
+        border: 0;
+        border-radius: 0;
+        background: transparent;
+        box-shadow: none;
+        opacity: 1;
+        pointer-events: auto;
+        transform: none;
+        visibility: visible;
+    }
+
+    .nav-dropdown.is-open .nav-dropdown-menu {
+        display: block;
+        transform: none;
+    }
+
+    .nav-dropdown-menu li,
+    .nav-dropdown-menu li:last-child {
+        width: 100%;
+        border-bottom: 0;
+    }
+
+    .nav-dropdown-menu a {
+        padding: 0.75rem 0 0.75rem 1rem;
+        font-size: 15px;
     }
 
     .nav-menu a.active::after {
