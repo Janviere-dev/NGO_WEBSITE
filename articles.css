@@ -1,4 +1,8 @@
-/* Self-contained presentation rules for the Articles pages. Existing site styles remain unchanged. */
+
+/* =========================================
+   HOPE FOR TOMORROW - ARTICLES STYLESHEET
+========================================= */
+
 .article-page {
     --article-paper: #fffdf9;
     --article-mist: #f5f2e7;
@@ -7,12 +11,18 @@
     --article-orange: #fa8c00;
     --article-blue: #0078aa;
     --article-green: #5a9600;
+    --article-content-width: 1060px;
+
     background: var(--article-paper);
 }
 
 .article-page .nav-menu {
     gap: clamp(0.85rem, 1.7vw, 2.1rem);
 }
+
+/* =========================================
+   ARTICLE INDEX / NEWS PAGE
+========================================= */
 
 .article-index-hero,
 .article-hero {
@@ -112,6 +122,10 @@
     line-height: 1.1;
 }
 
+/* =========================================
+   ARTICLE CARDS
+========================================= */
+
 .article-card {
     display: grid;
     grid-template-columns: minmax(280px, 0.95fr) minmax(320px, 1.05fr);
@@ -201,6 +215,10 @@
     color: var(--article-blue);
 }
 
+/* =========================================
+   CALL TO ACTION
+========================================= */
+
 .article-index-cta,
 .article-closing {
     padding: 88px 0;
@@ -226,6 +244,10 @@
     line-height: 1.12;
 }
 
+/* =========================================
+   ARTICLE HERO
+========================================= */
+
 .article-hero {
     padding: 142px 0 84px;
     background: var(--article-ink);
@@ -235,7 +257,10 @@
     content: '';
     position: absolute;
     inset: 0;
-    background-image: radial-gradient(rgba(255, 253, 249, 0.18) 1px, transparent 1px);
+    background-image: radial-gradient(
+        rgba(255, 253, 249, 0.18) 1px,
+        transparent 1px
+    );
     background-size: 22px 22px;
     mask-image: linear-gradient(90deg, transparent 0, #000 64%);
 }
@@ -288,52 +313,156 @@
     color: var(--article-orange);
 }
 
-.article-lead-image {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: min(72vh, 700px);
-    min-height: 440px;
-    background: #e9e4d6;
+/* =========================================
+   SINGLE ARTICLE - SHARED WIDTH
+========================================= */
+
+/* Center the article heading */
+.article-page .article-hero {
+    padding: 142px 0 44px;
+    background: var(--article-paper);
 }
 
-.article-lead-image img {
+.article-page .article-hero::before,
+.article-page .article-hero::after {
+    display: none;
+}
+
+.article-page .article-hero__content {
+    box-sizing: border-box;
+    width: min(calc(100% - 40px), var(--article-content-width));
+    max-width: none;
+    margin: 0 auto;
+}
+
+.article-page .article-back-link {
+    margin-bottom: 40px;
+    color: var(--article-ink);
+}
+
+.article-page .article-hero h1 {
+    max-width: 900px;
+    color: var(--article-ink);
+    font-size: clamp(2.3rem, 4.8vw, 4.25rem);
+    line-height: 1.08;
+}
+
+.article-page .article-hero__subtitle {
+    max-width: 900px;
+    margin-top: 24px;
+    color: var(--article-muted);
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: clamp(1.35rem, 2.4vw, 1.85rem);
+    font-weight: 500;
+    line-height: 1.35;
+}
+
+/* =========================================
+   FEATURED IMAGE - FIRST IMAGE
+========================================= */
+
+.article-page .article-lead-image {
+    box-sizing: border-box;
+    display: block;
+    width: min(calc(100% - 40px), var(--article-content-width));
+    /* height: clamp(280px, 40vw, 500px); */
+    height: 780px;
+    min-height: 0;
+    max-width: none;
+    margin: 0 auto;
+    overflow: hidden;
+    background: transparent;
+}
+
+.article-page .article-lead-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    max-height: 100%;
+    object-fit: cover;
+    object-position: center 42%;
+}
+
+/* =========================================
+   ARTICLE BODY
+========================================= */
+
+.article-page .article-story {
+    padding: 54px 20px 100px;
+    background: var(--article-paper);
+}
+
+.article-page .article-story__body {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: var(--article-content-width);
+    margin: 0 auto;
+    text-align: left;
+}
+
+.article-page .article-story__body p {
+    margin-bottom: 29px;
+    color: var(--article-ink);
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: clamp(1.08rem, 1.7vw, 1.3rem);
+    font-weight: 400;
+    line-height: 1.65;
+}
+
+/* =========================================
+   ARTICLE FIGURES / IMAGES
+========================================= */
+
+.article-page .article-figure {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: none;
+    margin: 42px auto;
+}
+
+.article-page .article-figure img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 0;
+}
+
+/* SECOND IMAGE - HANDWASHING IMAGE */
+
+/* Crop the upper part of the handwashing image */
+.article-page .article-story__body > .article-figure:first-of-type {
+    width: 100%;
+    height: 780px;
+    overflow: hidden;
+}
+
+.article-page .article-story__body > .article-figure:first-of-type img {
     display: block;
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center 40%;
+    object-position: center 75%;
+}
+/* THIRD AND REMAINING IMAGES */
+
+.article-page .article-figure:not(:first-of-type) img {
+    height: auto;
+    object-fit: contain;
 }
 
-.article-story {
-    padding: 78px 20px 100px;
-    background: var(--article-paper);
+/* Image captions */
+
+.article-figure figcaption {
+    margin-top: 11px;
+    color: #68766f;
+    font-size: 0.82rem;
+    font-style: italic;
+    line-height: 1.5;
 }
 
-.article-story__intro,
-.article-story__body {
-    width: min(100%, 760px);
-    margin: 0 auto;
-}
-
-.article-story__intro {
-    margin-bottom: 48px;
-}
-
-.article-story__intro p {
-    color: var(--article-ink);
-    font-family: 'Fraunces', Georgia, serif;
-    font-size: clamp(1.6rem, 3.25vw, 2.25rem);
-    font-weight: 500;
-    line-height: 1.38;
-}
-
-.article-story__body p {
-    margin-bottom: 27px;
-    color: var(--article-muted);
-    font-size: 1.08rem;
-    line-height: 1.82;
-}
+/* =========================================
+   IMPACT SECTION
+========================================= */
 
 .article-impact {
     margin: 52px 0;
@@ -359,7 +488,6 @@
 .article-impact__grid div {
     min-width: 0;
     padding-top: 17px;
-    /* border-top: 2px solid var(--article-orange); */
 }
 
 .article-impact__grid strong,
@@ -381,33 +509,9 @@
     line-height: 1.45;
 }
 
-.article-figure {
-    margin: 46px auto;
-}
-
-.article-figure img {
-    display: block;
-    width: 100%;
-    border-radius: 12px;
-}
-
-.article-figure--portrait {
-    max-width: 510px;
-}
-
-.article-figure--wide {
-    width: min(100%, 900px);
-    margin-right: auto;
-    margin-left: auto;
-}
-
-.article-figure figcaption {
-    margin-top: 11px;
-    color: #68766f;
-    font-size: 0.82rem;
-    font-style: italic;
-    line-height: 1.5;
-}
+/* =========================================
+   BLOCKQUOTES
+========================================= */
 
 .article-story blockquote {
     margin: 45px 0;
@@ -421,247 +525,10 @@
     line-height: 1.35;
 }
 
-@media (max-width: 860px) {
-    .article-page .nav-menu {
-        gap: 0;
-    }
-
-    .article-index-hero {
-        min-height: 420px;
-    }
-
-    .article-index-hero::after {
-        width: 500px;
-        height: 500px;
-        right: -230px;
-        bottom: -360px;
-    }
-
-    .article-card {
-        grid-template-columns: 1fr;
-    }
-
-    .article-card__image,
-    .article-card__image img {
-        min-height: 340px;
-        max-height: 460px;
-    }
-
-    .article-card__content {
-        padding: 38px;
-    }
-
-    .article-hero {
-        padding-top: 128px;
-    }
-}
-
-@media (max-width: 600px) {
-    .article-index-hero {
-        min-height: 390px;
-        padding: 125px 0 56px;
-    }
-
-    .article-index-content {
-        padding: 65px 0 76px;
-    }
-
-    .article-card {
-        border-radius: 12px;
-    }
-
-    .article-card__image,
-    .article-card__image img {
-        min-height: 295px;
-    }
-
-    .article-card__content {
-        padding: 28px 23px 32px;
-    }
-
-    .article-index-cta,
-    .article-closing {
-        padding: 68px 0;
-    }
-
-    .article-hero {
-        padding: 118px 0 62px;
-    }
-
-    .article-back-link {
-        margin-bottom: 42px;
-    }
-
-    .article-hero::after {
-        width: 330px;
-        height: 330px;
-        right: -190px;
-        bottom: -140px;
-        border-width: 40px;
-    }
-
-    .article-lead-image {
-        height: 490px;
-        min-height: 0;
-    }
-
-    .article-story {
-        padding: 58px 20px 75px;
-    }
-
-    .article-story__intro {
-        margin-bottom: 37px;
-    }
-
-    .article-story__body p {
-        font-size: 1rem;
-        line-height: 1.76;
-    }
-
-    .article-impact {
-        margin: 40px 0;
-        padding: 27px 22px;
-    }
-
-    .article-impact__grid {
-        grid-template-columns: 1fr;
-        gap: 19px;
-    }
-
-    .article-impact__grid div {
-        display: grid;
-        grid-template-columns: 92px 1fr;
-        align-items: center;
-        gap: 14px;
-    }
-
-    .article-impact__grid span {
-        margin: 0;
-    }
-
-    .article-figure {
-        margin: 37px auto;
-    }
-
-    .article-story blockquote {
-        margin: 38px 0;
-        padding-left: 20px;
-    }
-}
-
 /* =========================================
-   SINGLE ARTICLE PAGE
-   Shared width keeps the heading, lead image,
-   article text, and in-story images aligned.
+   NEWS GRID
 ========================================= */
 
-.article-page {
-    --article-content-width: 1060px;
-}
-
-/* Article heading */
-.article-page .article-hero {
-    padding: 142px 0 44px;
-    background: var(--article-paper);
-}
-
-.article-page .article-hero::before,
-.article-page .article-hero::after {
-    display: none;
-}
-
-.article-page .article-hero__content {
-    box-sizing: border-box;
-    width: min(calc(100% - 40px), var(--article-content-width));
-    max-width: none;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.article-page .article-back-link {
-    margin-bottom: 40px;
-    color: var(--article-ink);
-}
-
-.article-page .article-hero h1 {
-    max-width: 900px;
-    color: var(--article-ink);
-    font-size: clamp(2.3rem, 4.8vw, 4.25rem);
-    line-height: 1.08;
-}
-
-.article-page .article-hero__subtitle {
-    max-width: 900px;
-    margin-top: 24px;
-    color: var(--article-muted);
-    font-family: 'Fraunces', Georgia, serif;
-    font-size: clamp(1.35rem, 2.4vw, 1.85rem);
-    font-weight: 500;
-    line-height: 1.35;
-}
-
-/* Featured image */
-.article-page .article-lead-image {
-    box-sizing: border-box;
-    display: block;
-    width: min(calc(100% - 40px), var(--article-content-width));
-    max-width: none;
-    height: auto;
-    min-height: 0;
-    margin: 0 auto;
-    background: transparent;
-}
-
-.article-page .article-lead-image img {
-    display: block;
-    width: 100%;
-    height: auto;
-    max-height: none;
-    object-fit: contain;
-}
-
-/* Article text */
-.article-page .article-story {
-    padding: 54px 20px 100px;
-    background: var(--article-paper);
-}
-
-.article-page .article-story__body {
-    box-sizing: border-box;
-    width: 100%;
-    max-width: var(--article-content-width);
-    margin-left: auto;
-    margin-right: auto;
-    text-align: left;
-}
-
-.article-page .article-story__body p {
-    margin-bottom: 29px;
-    color: var(--article-ink);
-    font-family: 'Fraunces', Georgia, serif;
-    font-size: clamp(1.08rem, 1.7vw, 1.3rem);
-    font-weight: 400;
-    line-height: 1.65;
-}
-
-/* In-article images share the text column's width */
-.article-page .article-figure,
-.article-page .article-figure--portrait,
-.article-page .article-figure--wide {
-    box-sizing: border-box;
-    width: 100%;
-    max-width: none;
-    margin: 42px auto;
-}
-
-.article-page .article-figure img {
-    display: block;
-    width: 100%;
-    height: auto;
-    border-radius: 0;
-}
-
-/* News entries use a compact, repeatable editorial card layout as articles are added. */
 .article-grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -761,7 +628,87 @@
     text-transform: uppercase;
 }
 
+/* =========================================
+   TABLET RESPONSIVENESS
+========================================= */
+
+@media (max-width: 860px) {
+
+    .article-page .nav-menu {
+        gap: 0;
+    }
+
+    .article-index-hero {
+        min-height: 420px;
+    }
+
+    .article-index-hero::after {
+        width: 500px;
+        height: 500px;
+        right: -230px;
+        bottom: -360px;
+    }
+
+    .article-card {
+        grid-template-columns: 1fr;
+    }
+
+    .article-card__image,
+    .article-card__image img {
+        min-height: 340px;
+        max-height: 460px;
+    }
+
+    .article-card__content {
+        padding: 38px;
+    }
+
+    .article-hero {
+        padding-top: 128px;
+    }
+
+    .article-impact__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* =========================================
+   MOBILE RESPONSIVENESS
+========================================= */
+
 @media (max-width: 600px) {
+
+    .article-page .nav-menu {
+        gap: 0;
+    }
+
+    .article-index-hero {
+        min-height: 390px;
+        padding: 125px 0 56px;
+    }
+
+    .article-index-content {
+        padding: 65px 0 76px;
+    }
+
+    .article-card {
+        border-radius: 12px;
+    }
+
+    .article-card__image,
+    .article-card__image img {
+        min-height: 295px;
+    }
+
+    .article-card__content {
+        padding: 28px 23px 32px;
+    }
+
+    .article-index-cta,
+    .article-closing {
+        padding: 68px 0;
+    }
+
     .article-page .article-hero {
         padding: 116px 0 35px;
     }
@@ -774,10 +721,21 @@
         margin-bottom: 30px;
     }
 
-    .article-page .article-lead-image {
-        width: calc(100% - 30px);
+    .article-page .article-hero h1 {
+        font-size: clamp(2rem, 8vw, 3rem);
     }
 
+    .article-page .article-hero__subtitle {
+        font-size: 1.3rem;
+    }
+
+    /* First image on mobile */
+    .article-page .article-lead-image {
+        width: calc(100% - 30px);
+        height: 300px;
+    }
+
+    /* Article body */
     .article-page .article-story {
         padding: 40px 15px 65px;
     }
@@ -791,13 +749,49 @@
         line-height: 1.76;
     }
 
-    .article-page .article-figure,
-    .article-page .article-figure--portrait,
-    .article-page .article-figure--wide {
+    /* Second image on mobile */
+    .article-page .article-story__body > .article-figure:first-of-type {
+        height: 300px;
+        margin: 32px auto;
+    }
+
+    .article-page .article-figure {
         width: 100%;
         margin: 32px auto;
     }
 
+    /* Remaining images keep their natural proportions */
+    .article-page .article-figure:not(:first-of-type) img {
+        height: auto;
+    }
+
+    .article-impact {
+        margin: 40px 0;
+        padding: 27px 22px;
+    }
+
+    .article-impact__grid {
+        grid-template-columns: 1fr;
+        gap: 19px;
+    }
+
+    .article-impact__grid div {
+        display: grid;
+        grid-template-columns: 92px 1fr;
+        align-items: center;
+        gap: 14px;
+    }
+
+    .article-impact__grid span {
+        margin: 0;
+    }
+
+    .article-story blockquote {
+        margin: 38px 0;
+        padding-left: 20px;
+    }
+
+    /* News grid */
     .article-grid {
         grid-template-columns: 1fr;
         gap: 42px;
