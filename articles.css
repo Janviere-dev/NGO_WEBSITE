@@ -404,7 +404,7 @@
     margin-bottom: 29px;
     color: var(--article-ink);
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    font-size: clamp(1.08rem, 1.7vw, 1.3rem);
+    font-size: clamp(1.02rem, 1.0vw, 1.2rem);
     font-weight: 300;
     line-height: 1.65;
 }
