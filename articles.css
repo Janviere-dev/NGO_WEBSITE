@@ -548,3 +548,238 @@
         padding-left: 20px;
     }
 }
+
+/* PDF article layout: keep the document's content and photo sequence clear and uncluttered. */
+.article-page .article-hero {
+    padding: 142px 0 44px;
+    background: var(--article-paper);
+}
+
+.article-page .article-hero::before,
+.article-page .article-hero::after {
+    display: none;
+}
+
+.article-page .article-hero__content {
+    max-width: 900px;
+}
+
+.article-page .article-back-link {
+    margin-bottom: 40px;
+    color: var(--article-ink);
+}
+
+.article-page .article-hero h1 {
+    max-width: 820px;
+    color: var(--article-ink);
+    font-size: clamp(2.3rem, 4.8vw, 4.25rem);
+    line-height: 1.08;
+}
+
+.article-hero__subtitle {
+    max-width: 760px;
+    margin-top: 24px;
+    color: var(--article-muted);
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: clamp(1.35rem, 2.4vw, 1.85rem);
+    font-weight: 500;
+    line-height: 1.35;
+}
+
+.article-page .article-lead-image {
+    width: min(100% - 40px, 820px);
+    height: auto;
+    min-height: 0;
+    margin: 0 auto;
+    background: transparent;
+}
+
+.article-page .article-lead-image img {
+    height: auto;
+    max-height: none;
+    object-fit: contain;
+}
+
+.article-page .article-story {
+    padding: 54px 20px 100px;
+}
+
+.article-page .article-story__body {
+    width: min(100%, 820px);
+}
+
+.article-page .article-story__body p {
+    margin-bottom: 29px;
+    color: var(--article-ink);
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: clamp(1.08rem, 1.7vw, 1.3rem);
+    font-weight: 400;
+    line-height: 1.65;
+}
+
+.article-page .article-figure {
+    width: 100%;
+    max-width: 820px;
+    margin: 42px auto;
+}
+
+.article-page .article-figure img {
+    border-radius: 0;
+}
+
+.article-page .article-figure--portrait {
+    max-width: 820px;
+}
+
+/* News entries use a compact, repeatable editorial card layout as articles are added. */
+.article-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 56px 30px;
+}
+
+.article-grid .article-card {
+    display: block;
+    min-height: 0;
+    overflow: visible;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+}
+
+.article-grid .article-card__image,
+.article-grid .article-card__image img {
+    min-height: 0;
+    height: auto;
+}
+
+.article-grid .article-card__image {
+    aspect-ratio: 4 / 3;
+}
+
+.article-grid .article-card__image img {
+    width: 100%;
+    height: 100%;
+    object-position: center 40%;
+}
+
+.article-card__entry {
+    display: grid;
+    grid-template-columns: 70px minmax(0, 1fr);
+    gap: 24px;
+    margin-top: 24px;
+}
+
+.article-card__date {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    align-self: start;
+    min-height: 76px;
+    padding: 9px 5px;
+    background: var(--article-orange);
+    color: #fff;
+    font-family: 'Inter', Arial, sans-serif;
+    line-height: 1.05;
+    text-align: center;
+}
+
+.article-card__date span {
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+.article-card__date small {
+    margin-top: 5px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+}
+
+.article-grid .article-card__content {
+    display: block;
+    padding: 0;
+}
+
+.article-grid .article-card__content h3 {
+    margin: 0 0 12px;
+    font-size: clamp(1.25rem, 2vw, 1.58rem);
+    line-height: 1.17;
+}
+
+.article-grid .article-card__meta {
+    margin-bottom: 16px;
+    color: var(--article-orange);
+    font-family: 'Inter', Arial, sans-serif;
+    font-size: 0.88rem;
+    font-style: italic;
+    font-weight: 500;
+    letter-spacing: 0;
+    text-transform: none;
+}
+
+.article-grid .article-card__content > p:not(.article-card__meta) {
+    margin-bottom: 19px;
+    font-size: 0.98rem;
+    line-height: 1.72;
+}
+
+.article-grid .article-read-more {
+    font-size: 0.84rem;
+    text-transform: uppercase;
+}
+
+/* Reduce the visual weight of the PDF photos on wider screens. */
+.article-page .article-lead-image,
+.article-page .article-figure--portrait {
+    max-width: 620px;
+}
+
+.article-page .article-figure--wide {
+    max-width: 720px;
+}
+
+@media (max-width: 600px) {
+    .article-page .article-hero {
+        padding: 116px 0 35px;
+    }
+
+    .article-page .article-back-link {
+        margin-bottom: 30px;
+    }
+
+    .article-page .article-lead-image {
+        width: min(100% - 30px, 820px);
+    }
+
+    .article-page .article-story {
+        padding: 40px 20px 65px;
+    }
+
+    .article-page .article-figure {
+        margin: 32px auto;
+    }
+
+    .article-grid {
+        grid-template-columns: 1fr;
+        gap: 42px;
+    }
+
+    .article-card__entry {
+        grid-template-columns: 64px minmax(0, 1fr);
+        gap: 18px;
+        margin-top: 18px;
+    }
+
+    .article-card__date {
+        min-height: 68px;
+    }
+
+    .article-page .article-lead-image,
+    .article-page .article-figure--portrait,
+    .article-page .article-figure--wide {
+        max-width: none;
+    }
+}
